@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <application
         android:allowBackup="true"
@@ -11,16 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileGlobal"
-        tools:targetApi="34">
+        tools:targetApi="34" >
         <activity
-            android:name=".MinhasReservasActivity"
+            android:name=".login.CadastroVeiculoActivity"
             android:exported="false" />
         <activity
-            android:name=".EletropontoActivity"
+            android:name=".login.CadastroActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="true">
+            android:name=".login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.PerfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.MeuVeiculoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.MinhasReservasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.EletropontoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.HomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

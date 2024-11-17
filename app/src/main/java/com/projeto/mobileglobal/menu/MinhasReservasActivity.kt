@@ -1,12 +1,13 @@
-package com.projeto.mobileglobal
+package com.projeto.mobileglobal.menu
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.projeto.mobileglobal.R
 
-class EletropontoActivity : AppCompatActivity() {
+class MinhasReservasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_eletroponto)
+        setContentView(R.layout.activity_minhas_reservas)
 
     }
 }

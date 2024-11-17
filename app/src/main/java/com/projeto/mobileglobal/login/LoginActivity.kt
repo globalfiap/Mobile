@@ -1,15 +1,12 @@
-package com.projeto.mobileglobal
+package com.projeto.mobileglobal.login
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.projeto.mobileglobal.R
 
-class HomeActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-        }
-
+        setContentView(R.layout.activity_login)
+    }
 }
-
-
-
