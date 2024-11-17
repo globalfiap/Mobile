@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MobileGlobal</string>
+    <string name="text_eletropontos">Eletropontos</string>
+    <string name="text_meu_perfil">Meu perfil</string>
+    <string name="text_meu_veiculo">Meu veículo</string>
+    <string name="text_minhas_reservas">Minhas reservas</string>
 </resources>
