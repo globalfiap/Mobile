@@ -4,4 +4,8 @@
     <string name="text_meu_perfil">Meu perfil</string>
     <string name="text_meu_veiculo">Meu veículo</string>
     <string name="text_minhas_reservas">Minhas reservas</string>
+    <string name="voltar">voltar</string>
+    <string name="favorito">favorito</string>
+    <string name="logo">logo</string>
+
 </resources>
