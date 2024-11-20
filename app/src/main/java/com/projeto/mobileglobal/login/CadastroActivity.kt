@@ -1,5 +1,6 @@
 package com.projeto.mobileglobal.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -49,8 +50,15 @@ class CadastroActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmailAndPassword: Success")
-                    Toast.makeText(baseContext, "Usuário criado com sucesso!", Toast.LENGTH_SHORT)
-                        .show()
+                    Toast.makeText(baseContext, "Usuário criado com sucesso!", Toast.LENGTH_SHORT).show()
+
+                    //**************
+                    // Certo seria aqui redirecionar para a tela de cadastro do veículo, mas não está indo!
+                    //**************
+
+                    val intent = Intent(this, CadastroVeiculoActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     Log.w(TAG, "createUserWithEmailAndPassword: Failure", task.exception)
                     Toast.makeText(
