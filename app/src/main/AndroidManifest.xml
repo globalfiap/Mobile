@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,24 +13,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileGlobal"
         tools:targetApi="34">
-        <activity
-            android:name=".FavoritoActivity"
-            android:exported="false" />
-        <!-- Meta-data para a versão do Google Play Services -->
+
+        <!-- Meta-data para Google Play Services e API do Google Maps -->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" /> <!-- Meta-data para a chave de API do Google Maps -->
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" /> <!-- Activities -->
+            android:value="${MAPS_API_KEY}" />
+
+
         <activity
-            android:name=".login.CadastroVeiculoActivity"
-            android:exported="false" />
+            android:name=".login.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".login.CadastroActivity"
             android:exported="false" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".login.CadastroVeiculoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".menu.PerfilActivity"
@@ -44,14 +54,8 @@
             android:name=".menu.EletropontoActivity"
             android:exported="false" />
         <activity
-            android:name=".menu.HomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".FavoritoActivity"
+            android:exported="false" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
-
 </manifest>

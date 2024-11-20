@@ -152,19 +152,19 @@
         android:text="Cancelar"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/buttonAdicionar"
+        app:layout_constraintEnd_toStartOf="@id/buttonCadastrar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextPlaca" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonAdicionar"
+        android:id="@+id/buttonCadastrar"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/button_adicionar_veiculo"
-        android:text="Adicionar novo veículo"
+        android:text="Cadastrar"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
