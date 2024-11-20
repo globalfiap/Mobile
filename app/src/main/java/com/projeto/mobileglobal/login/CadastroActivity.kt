@@ -52,10 +52,6 @@ class CadastroActivity : AppCompatActivity() {
                     Log.d(TAG, "createUserWithEmailAndPassword: Success")
                     Toast.makeText(baseContext, "Usuário criado com sucesso!", Toast.LENGTH_SHORT).show()
 
-                    //**************
-                    // Certo seria aqui redirecionar para a tela de cadastro do veículo, mas não está indo!
-                    //**************
-
                     val intent = Intent(this, CadastroVeiculoActivity::class.java)
                     startActivity(intent)
                     finish()

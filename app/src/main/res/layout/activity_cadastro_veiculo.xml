@@ -96,16 +96,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnermarca" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_plugs"
-        android:layout_width="140sp"
+    <Spinner
+        android:id="@+id/spinnerplugs"
+        android:layout_width="127dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/button_cadastro_veiculo"
-        android:text="Selecionar"
-        android:textColor="@color/cinza_texto"
+        android:background="@drawable/cadastro_design"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +119,7 @@
         android:textColor="@color/white"
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_plugs" />
+        app:layout_constraintTop_toBottomOf="@id/spinnerplugs" />
 
     <EditText
         android:id="@+id/editTextPlaca"
@@ -134,7 +132,7 @@
         android:hint="Digite a placa do veículo"
         android:inputType="text"
         android:padding="10dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/cinza_texto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
