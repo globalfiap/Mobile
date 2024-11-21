@@ -6,4 +6,6 @@
     <color name="menu">#D9D9D9</color>
     <color name="global">#5add7f</color>
     <color name="cinza_texto">#a4a4a4</color>
+    <color name="excluir">#FF0000</color>
+
 </resources>

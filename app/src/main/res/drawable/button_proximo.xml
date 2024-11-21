@@ -1,19 +1,18 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Estado pressionado -->
+
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/global" /> <!-- Cor ao pressionar -->
-            <corners android:radius="25dp" /> <!-- Bordas arredondadas -->
-            <stroke android:width="2dp" android:color="@color/white" /> <!-- Borda branca -->
+            <solid android:color="@color/white" />
+            <corners android:radius="25dp" />
+            <stroke android:width="2dp" android:color="@color/white" />
         </shape>
     </item>
 
-    <!-- Estado normal -->
+
     <item>
         <shape>
-            <solid android:color="@color/white" /> <!-- Cor padrão -->
-            <corners android:radius="25dp" /> <!-- Bordas arredondadas -->
-            <stroke android:width="2dp" android:color="@color/global" /> <!-- Borda verde -->
+            <solid android:color="@color/global" />
+            <corners android:radius="25dp" />
         </shape>
     </item>
 </selector>

@@ -24,10 +24,11 @@ class CadastroActivity : AppCompatActivity() {
             val email = binding?.emailText?.text.toString()
             val password = binding?.senhaText?.text.toString()
             val confirmPassword = binding?.confirmarSenhaText?.text.toString()
+            val nomeUsuario = binding?.nomeText?.text.toString() // Captura o nome do usuário
 
-            if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
+            if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty() && nomeUsuario.isNotEmpty()) {
                 if (password == confirmPassword) {
-                    createUserWithEmailAndPassword(email, password)
+                    createUserWithEmailAndPassword(email, password, nomeUsuario)
                 } else {
                     Toast.makeText(
                         this@CadastroActivity,
@@ -45,7 +46,7 @@ class CadastroActivity : AppCompatActivity() {
         }
     }
 
-    private fun createUserWithEmailAndPassword(email: String, password: String) {
+    private fun createUserWithEmailAndPassword(email: String, password: String, nomeUsuario: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -53,6 +54,7 @@ class CadastroActivity : AppCompatActivity() {
                     Toast.makeText(baseContext, "Usuário criado com sucesso!", Toast.LENGTH_SHORT).show()
 
                     val intent = Intent(this, CadastroVeiculoActivity::class.java)
+                    intent.putExtra("nomeUsuario", nomeUsuario) // Passa o nome do usuário
                     startActivity(intent)
                     finish()
                 } else {

@@ -29,19 +29,30 @@ class CadastroVeiculoActivity : AppCompatActivity() {
             "Volvo C40" to R.drawable.car_c40
         )
 
-        // Preencher opções de marca
-        val marcas = listOf("BYD", "Tesla", "Volvo")
+        // Adicionar placeholder para as marcas
+        val marcas = listOf("Selecione a marca", "BYD", "Tesla", "Volvo")
         val adapterMarca = ArrayAdapter(this, android.R.layout.simple_spinner_item, marcas)
         adapterMarca.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerMarca.adapter = adapterMarca
 
-        // Atualizar modelos com base na marca selecionada
+        // Configurar ação ao selecionar uma marca
         spinnerMarca.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                if (position == 0) {
+                    // Placeholder selecionado - nenhuma ação
+                    return
+                }
+
+                // Atualizar modelos com base na marca selecionada
                 val modelos = when (marcas[position]) {
-                    "BYD" -> listOf("BYD Dolphin", "BYD Song Pro", "BYD Seal")
-                    "Tesla" -> listOf("Tesla Model 3", "Tesla Cybertruck")
-                    "Volvo" -> listOf("Volvo C40")
+                    "BYD" -> listOf("Selecione o modelo", "BYD Dolphin", "BYD Song Pro", "BYD Seal")
+                    "Tesla" -> listOf("Selecione o modelo", "Tesla Model 3", "Tesla Cybertruck")
+                    "Volvo" -> listOf("Selecione o modelo", "Volvo C40")
                     else -> emptyList()
                 }
                 val adapterModelo = ArrayAdapter(
@@ -56,30 +67,37 @@ class CadastroVeiculoActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
-        // Preencher opções de plugs
-        val plugs = listOf("Tipo 1", "Tipo 2", "GB/T", "CCS")
+        // Adicionar placeholder para os plugs
+        val plugs = listOf("Plug", "Tipo 1", "Tipo 2", "GB/T", "CCS")
         val adapterPlugs = ArrayAdapter(this, android.R.layout.simple_spinner_item, plugs)
         adapterPlugs.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerPlugs.adapter = adapterPlugs
 
-        // Botão de cadastro
         buttonCadastrar.setOnClickListener {
             val marca = spinnerMarca.selectedItem?.toString()
             val modelo = spinnerModelo.selectedItem?.toString()
             val plug = spinnerPlugs.selectedItem?.toString()
             val placa = editTextPlaca.text.toString()
+            val nomeUsuario = intent.getStringExtra("nomeUsuario") // Recebe o nome do usuário
 
             if (marca != null && modelo != null && plug != null && placa.isNotEmpty()) {
                 Toast.makeText(this, "Veículo cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
 
-                // Passar dados do veículo para a HomeActivity
                 val intent = Intent(this, HomeActivity::class.java)
                 intent.putExtra("modelo", modelo)
                 intent.putExtra("imagem", vehicleImages[modelo])
+                intent.putExtra(
+                    "nomeUsuario",
+                    nomeUsuario
+                ) // Passa o nome do usuário para HomeActivity
                 startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, "Por favor, preencha todas as informações.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Por favor, preencha todas as informações.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }

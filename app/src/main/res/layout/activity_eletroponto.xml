@@ -9,24 +9,36 @@
     android:background="@color/fundo"
     tools:context=".menu.EletropontoActivity">
 
-    <!-- Campo de busca -->
+
     <EditText
         android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="Buscar endereço"
-        android:textColorHint="@android:color/white"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
         android:background="@drawable/campo_pesquisa"
         android:drawableStart="@drawable/pesquisar_icone"
         android:drawablePadding="4dp"
+        android:hint="Buscar endereço"
+        android:inputType="text"
         android:padding="8dp"
         android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         android:textSize="14sp"
-        android:layout_margin="8dp"
-        android:inputType="text"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/logo_image"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Logo na lateral -->
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        app:srcCompat="@drawable/logo_pequeno"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 
     <!-- Fragmento do mapa -->
     <fragment

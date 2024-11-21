@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileGlobal"
         tools:targetApi="34">
-
+        <activity
+            android:name=".menu.AgendamentoActivity"
+            android:exported="false" />
         <!-- Meta-data para Google Play Services e API do Google Maps -->
         <meta-data
             android:name="com.google.android.gms.version"
@@ -22,16 +25,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
 
-
         <activity
             android:name=".login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".login.CadastroActivity"
             android:exported="false" />
@@ -56,6 +58,6 @@
         <activity
             android:name=".FavoritoActivity"
             android:exported="false" />
-
     </application>
+
 </manifest>

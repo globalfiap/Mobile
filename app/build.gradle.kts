@@ -60,4 +60,5 @@ dependencies {
 
     // Firebase autenticação para o firebase no login
     implementation ("com.google.firebase:firebase-auth-ktx:23.1.0")
+
 }
