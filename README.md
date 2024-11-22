@@ -30,6 +30,8 @@ Para rodar o projeto, você precisa configurar a chave da API do Google Maps. Ad
 ```properties
 MAPS_API_KEY=AIzaSyAGh8q0lI40H67lWonw2WfTL33ZDbwdR3o
 
+---
+
 ## LINKS
 Figma:
 https://www.figma.com/design/Ir8V7KPSws9gH2ncECyi20/Glob
