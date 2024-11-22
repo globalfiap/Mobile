@@ -61,4 +61,8 @@ dependencies {
     // Firebase autenticação para o firebase no login
     implementation ("com.google.firebase:firebase-auth-ktx:23.1.0")
 
+    // Firebase Realtime Database
+    implementation("com.google.firebase:firebase-database-ktx")
+
+
 }

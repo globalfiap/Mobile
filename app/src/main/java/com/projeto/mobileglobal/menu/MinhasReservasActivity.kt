@@ -2,6 +2,7 @@ package com.projeto.mobileglobal.menu
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -14,12 +15,27 @@ import java.util.*
 class MinhasReservasActivity : AppCompatActivity() {
     private var selectedDate: String = ""
     private var selectedTime: String = ""
-    private val agendamentos = mutableListOf<String>() // Lista para armazenar agendamentos
-    private lateinit var adapterRecyclerView: AgendamentosAdapter // Adapter da RecyclerView
+    private val agendamentos = mutableListOf<String>()
+    private lateinit var adapterRecyclerView: AgendamentosAdapter
+
+    private var modelo: String? = null
+    private var imagemResId: Int = R.drawable.sem_imagem
+    private var nomeUsuario: String? = null
+    private var marca: String? = null
+    private var plug: String? = null
+    private var placa: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_minhas_reservas)
+
+        // Recuperar dados do Intent
+        modelo = intent.getStringExtra("modelo")
+        imagemResId = intent.getIntExtra("imagem", R.drawable.sem_imagem)
+        nomeUsuario = intent.getStringExtra("nomeUsuario")
+        marca = intent.getStringExtra("marca")
+        plug = intent.getStringExtra("plug")
+        placa = intent.getStringExtra("placa")
 
         val spinnerEletropontos: Spinner = findViewById(R.id.spinnerEletropontos)
         val btnSelecionarData: Button = findViewById(R.id.btnSelecionarData)
@@ -27,14 +43,10 @@ class MinhasReservasActivity : AppCompatActivity() {
         val btnAgendar: Button = findViewById(R.id.btnAgendar)
         val recyclerView: RecyclerView = findViewById(R.id.recyclerViewAgendamentos)
 
-
-
-        // Dados para o Spinner
         val placeNames = PlacesData.places.map { it.name }
         val adapterSpinner = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, placeNames)
         spinnerEletropontos.adapter = adapterSpinner
 
-        // Inicialização do Adapter da RecyclerView
         adapterRecyclerView = AgendamentosAdapter(agendamentos) { position ->
             agendamentos.removeAt(position)
             adapterRecyclerView.notifyItemRemoved(position)
@@ -44,7 +56,6 @@ class MinhasReservasActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapterRecyclerView
 
-        // Configuração do botão Selecionar Data
         btnSelecionarData.setOnClickListener {
             val calendar = Calendar.getInstance()
             val year = calendar.get(Calendar.YEAR)
@@ -57,7 +68,6 @@ class MinhasReservasActivity : AppCompatActivity() {
             }, year, month, day).show()
         }
 
-        // Configuração do botão Selecionar Hora
         btnSelecionarHora.setOnClickListener {
             val calendar = Calendar.getInstance()
             val hour = calendar.get(Calendar.HOUR_OF_DAY)
@@ -69,7 +79,6 @@ class MinhasReservasActivity : AppCompatActivity() {
             }, hour, minute, true).show()
         }
 
-        // Configuração do botão Agendar
         btnAgendar.setOnClickListener {
             val selectedPlaceName = spinnerEletropontos.selectedItem.toString()
             val selectedPlace = PlacesData.places.find { it.name == selectedPlaceName }
@@ -81,7 +90,7 @@ class MinhasReservasActivity : AppCompatActivity() {
                     Hora: $selectedTime
                 """.trimIndent()
 
-                agendamentos.add(agendamento) // Adiciona o agendamento à lista
+                agendamentos.add(agendamento)
                 adapterRecyclerView.notifyItemInserted(agendamentos.size - 1)
 
                 Toast.makeText(
@@ -92,6 +101,21 @@ class MinhasReservasActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Erro ao encontrar o lugar selecionado.", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // Botão de voltar
+        val setaVoltar = findViewById<ImageView>(R.id.voltar)
+        setaVoltar.setOnClickListener {
+            val intentRetorno = Intent(this, HomeActivity::class.java).apply {
+                putExtra("modelo", modelo)
+                putExtra("imagem", imagemResId)
+                putExtra("nomeUsuario", nomeUsuario)
+                putExtra("marca", marca)
+                putExtra("plug", plug)
+                putExtra("placa", placa)
+            }
+            startActivity(intentRetorno)
+            finish()
         }
     }
 }

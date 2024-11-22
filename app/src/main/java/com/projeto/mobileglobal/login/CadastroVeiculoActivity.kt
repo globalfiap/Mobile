@@ -44,7 +44,6 @@ class CadastroVeiculoActivity : AppCompatActivity() {
                 id: Long
             ) {
                 if (position == 0) {
-                    // Placeholder selecionado - nenhuma ação
                     return
                 }
 
@@ -73,29 +72,39 @@ class CadastroVeiculoActivity : AppCompatActivity() {
         adapterPlugs.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerPlugs.adapter = adapterPlugs
 
+
+        spinnerPlugs.setSelection(0)
+
         buttonCadastrar.setOnClickListener {
             val marca = spinnerMarca.selectedItem?.toString()
             val modelo = spinnerModelo.selectedItem?.toString()
             val plug = spinnerPlugs.selectedItem?.toString()
             val placa = editTextPlaca.text.toString()
-            val nomeUsuario = intent.getStringExtra("nomeUsuario") // Recebe o nome do usuário
+            val nomeUsuario = intent.getStringExtra("nomeUsuario") ?: "Usuário"
 
-            if (marca != null && modelo != null && plug != null && placa.isNotEmpty()) {
+
+            if (marca != null && marca != "Selecione a marca" &&
+                modelo != null && modelo != "Selecione o modelo" &&
+                plug != null && plug != "Plug" &&
+                placa.isNotEmpty()
+            ) {
                 Toast.makeText(this, "Veículo cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("modelo", modelo)
-                intent.putExtra("imagem", vehicleImages[modelo])
-                intent.putExtra(
-                    "nomeUsuario",
-                    nomeUsuario
-                ) // Passa o nome do usuário para HomeActivity
+                // Passar dados para HomeActivity
+                val intent = Intent(this, HomeActivity::class.java).apply {
+                    putExtra("modelo", modelo)
+                    putExtra("imagem", vehicleImages[modelo])
+                    putExtra("nomeUsuario", nomeUsuario)
+                    putExtra("marca", marca)
+                    putExtra("plug", plug)
+                    putExtra("placa", placa)
+                }
                 startActivity(intent)
                 finish()
             } else {
                 Toast.makeText(
                     this,
-                    "Por favor, preencha todas as informações.",
+                    "Por favor, preencha todas as informações corretamente.",
                     Toast.LENGTH_SHORT
                 ).show()
             }

@@ -9,24 +9,36 @@
     android:background="@color/fundo"
     tools:context=".menu.EletropontoActivity">
 
+    <!-- Esse erro é um bug ou algo do tipo da API do Google -->
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:contentDescription="@string/bot_o_de_voltar"
+        android:src="@drawable/voltar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/search_bar"
         android:layout_width="0dp"
-        android:layout_height="49dp"
+        android:layout_height="48dp"
         android:background="@drawable/campo_pesquisa"
         android:drawableStart="@drawable/pesquisar_icone"
         android:drawablePadding="4dp"
-        android:hint="Buscar endereço"
+        android:hint="@string/buscar_endere_o"
         android:inputType="text"
         android:padding="8dp"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
         android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/imageView5"
         app:layout_constraintEnd_toStartOf="@id/logo_image"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
     <!-- Logo na lateral -->
@@ -34,11 +46,10 @@
         android:id="@+id/logo_image"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         app:srcCompat="@drawable/logo_pequeno"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
     <!-- Fragmento do mapa -->
     <fragment
