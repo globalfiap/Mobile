@@ -14,6 +14,19 @@ O **EcoDrive** é um aplicativo móvel desenvolvido em Kotlin que visa facilitar
 - **Agendamento de recargas**: Torna possível organizar e planejar recargas, garantindo mais conveniência no dia a dia.
 
 ---
+## LINKS
+Figma:
+https://www.figma.com/design/Ir8V7KPSws9gH2ncECyi20/Glob
+al-Solution-FIGMA?node-id=0-1&t=lP467r4AvsqUzDdJ-1
+
+Miro:
+https://miro.com/welcomeonboard/V2NOUThhVkZWb3F5YVhPc
+HlKZ1lEYjMxdVF6bzBFbDJDL21wdE5OcFAzb1M4SSt1cm5uNTFl
+dGI2SE1tZGo2ZFNMbTZIcUx0ZzBwdGlWemtQSjNVamVTblNRd0
+hWWWw2clpGd0Rwd0JXMmQ0S1RHelhxMHZ2VUZwdHFUWW
+JuTGwhZQ==?share_link_id=468499909302
+
+---
 
 ## Integrantes do Projeto 👥
 
@@ -31,16 +44,4 @@ Para rodar o projeto, você precisa configurar a chave da API do Google Maps. Ad
 MAPS_API_KEY=AIzaSyAGh8q0lI40H67lWonw2WfTL33ZDbwdR3o
 
 ---
-
-## LINKS
-Figma:
-https://www.figma.com/design/Ir8V7KPSws9gH2ncECyi20/Glob
-al-Solution-FIGMA?node-id=0-1&t=lP467r4AvsqUzDdJ-1
-
-Miro:
-https://miro.com/welcomeonboard/V2NOUThhVkZWb3F5YVhPc
-HlKZ1lEYjMxdVF6bzBFbDJDL21wdE5OcFAzb1M4SSt1cm5uNTFl
-dGI2SE1tZGo2ZFNMbTZIcUx0ZzBwdGlWemtQSjNVamVTblNRd0
-hWWWw2clpGd0Rwd0JXMmQ0S1RHelhxMHZ2VUZwdHFUWW
-JuTGwhZQ==?share_link_id=468499909302
 
