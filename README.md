@@ -26,6 +26,12 @@ dGI2SE1tZGo2ZFNMbTZIcUx0ZzBwdGlWemtQSjNVamVTblNRd0
 hWWWw2clpGd0Rwd0JXMmQ0S1RHelhxMHZ2VUZwdHFUWW
 JuTGwhZQ==?share_link_id=468499909302
 
+Pitch:
+https://www.youtube.com/watch?v=8bzh6oU2oPI
+
+Rodando o APP:
+https://www.youtube.com/watch?v=UyvLvyCwWyY
+
 ---
 
 ## Integrantes do Projeto 👥
