@@ -20,11 +20,7 @@ https://www.figma.com/design/Ir8V7KPSws9gH2ncECyi20/Glob
 al-Solution-FIGMA?node-id=0-1&t=lP467r4AvsqUzDdJ-1
 
 Miro:
-https://miro.com/welcomeonboard/V2NOUThhVkZWb3F5YVhPc
-HlKZ1lEYjMxdVF6bzBFbDJDL21wdE5OcFAzb1M4SSt1cm5uNTFl
-dGI2SE1tZGo2ZFNMbTZIcUx0ZzBwdGlWemtQSjNVamVTblNRd0
-hWWWw2clpGd0Rwd0JXMmQ0S1RHelhxMHZ2VUZwdHFUWW
-JuTGwhZQ==?share_link_id=468499909302
+https://miro.com/app/board/uXjVLHL8-v4=/?share_link_id=73493550302
 
 Pitch:
 https://www.youtube.com/watch?v=8bzh6oU2oPI
